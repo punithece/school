@@ -1,0 +1,92 @@
+
+<div class="wrapper">
+    <div class="section">
+        <div class="box-area">
+
+            <nav>
+                <ul>
+                  <li><a routerLink="/dashboard">Dashboard</a></li>
+                  <li><a routerLink="/employeedtls">Employee</a></li>
+                  <li><a routerLink="/dbconnections">DBConnections</a></li>
+                  <li><a routerLink="/courselist">CourseList</a></li>
+                  <li><a routerLink="/login" routerLinkActive="active">LogOut</a></li>
+                </ul>
+              </nav>
+              <div>
+                <p>courselist works!</p>
+              </div>
+              <div>
+                  <ul *ngFor="let course of courses">
+                     <li>{{ course.id }} {{course.name}}</li>
+                  </ul>
+              </div>
+              <div style="text-align: left">  
+                <table>  
+                    <tr>  
+                        <td>  
+                            Size is :  
+                        </td>  
+                        <td>  
+                            
+                        </td>  
+                    </tr>  
+                    <tr>  
+                        <td>  
+                            Square is:  
+                        </td>  
+                        <td>  
+                            
+                        </td>  
+                    </tr>  
+                     
+                </table>  
+            </div>
+            <div>
+                Today's item: {{item}}
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" id="item-input">
+                            <button type="button" >Add to parent's list</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="changeNameView" />
+                            
+                        </td>
+                        <td>
+                            View THE NAME :: {{changeNameView}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div *ngIf="condition as value; else elseBlock">{{value}}</div>
+                            <ng-template #elseBlock>Content Show</ng-template>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div *ngIf="condition; then thenBlock else elseBlockone"></div>
+                            <ng-template #thenBlock>ThenBLock Show</ng-template>
+                            <ng-template #elseBlockone>ElseBlock Show</ng-template>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div *ngFor="let item of itemView">
+                                   ({{item.id}}) {{item.name}}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button (click)="onCalculateValue()">Calculate</button>
+                            <button (click)="greet()">Greet</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

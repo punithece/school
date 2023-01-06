@@ -1,0 +1,134 @@
+<div class="wrapper">
+    <div class="section">
+        <div class="box-area">
+            <nav>
+                <ul>
+                    <li><a routerLink="/dashboard">Dashboard</a></li>
+                    <li><a routerLink="/employeedtls">Employee</a></li>
+                    <li><a routerLink="/dbconnections">DBConnections</a></li>
+                    <li><a routerLink="/courselist">CourseList</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active">LogOut</a></li>
+                </ul>
+            </nav>
+            <ng-template #content let-c="close" let-d="dismiss">
+                <div class="content">
+
+                    <div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <h4 style="display: inline-block">DB Connection Details</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: auto">
+                        <div class="container">
+                            <form>
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="Name"><span class="req">* </span> Datasource Id: <small></small> </label>
+                                        <input required type="text" [(ngModel)]="dbModal.datasourceId" name="datasourceId"
+                                            id="datasourceId" class="form-control" maxlength="28" placeholder=""
+                                            [ngModelOptions]="{standalone: true}" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="salary"><span class="req">* </span> Server Name: </label>
+                                        <input class="form-control" type="text" [(ngModel)]="dbModal.serverName"
+                                            name="serverName" id="serverName" required placeholder=""
+                                            [ngModelOptions]="{standalone: true}" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="empsections"><span class="req">* </span> Database Name: </label>
+                                        <input class="form-control" type="text" [(ngModel)]="dbModal.databaseName"
+                                            name="databaseName" id="databaseName" required placeholder=""
+                                            [ngModelOptions]="{standalone: true}" />
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-footer ">
+                                    <button kendoButton type="button" class=" btn-light" name="submit_reg"
+                                        >Save</button>
+                                    <button kendoButton type="button" class=" btn-light"
+                                        (click)="c('Close click');">Close</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <div class="example-config ">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-blue">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4 style="display: inline-block;text-align: right;">DB Connection Details</h4>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                            <img class="img-responsive" (click)="invokeDBMethodAdd()"
+                                                src="./assets/images/Add.png">
+                                            <img class="img-responsive" (click)="editDB()"
+                                                src="./assets/images/Edit.png">
+                                            <img class="img-responsive" (click)="deleteDBRecord()"
+                                                src="./assets/images/Delete.png">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <kendo-grid [selectable]="true" [data]="gridDataDB" kendoGridSelectBy="datasourceId"
+                                    [(selectedKeys)]="mySelection1" [loading]="loading" [sortable]="true"
+                                    [reorderable]="true" [filterable]="true" [columnMenu]="{ filter: true }"
+                                    [resizable]="true" style="height: 400px; width: 1020px;"
+                                    (dataStateChange)="dataStateChange($event)">
+                                    <!-- <kendo-grid [selectable]="true" [data]="employeeGridView" kendoGridSelectBy="id" [(selectedKeys)]="mySelection1"
+                [pageSize]="20" [pageable]="true" [sortable]="true" [sort]="state.sort" [filter]="state.filter" [groupable]="true" [reorderable]="true"
+                    [resizable]="true" [height]="500" [columnMenu]="{ filter: true }" (dataStateChange)="dataStateChange($event)">-->
+                                    <kendo-grid-checkbox-column [width]="45" [headerClass]="{'text-center': true}"
+                                        [class]="{'text-center': true}" [resizable]="false" [columnMenu]="false"
+                                        [showSelectAll]="true">
+                                    </kendo-grid-checkbox-column>
+                                    <kendo-grid-column field="datasourceId" title="DataSource Id">
+                                        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                                            <kendo-grid-numeric-filter-cell [column]="column" [filter]="filter">
+                                            </kendo-grid-numeric-filter-cell>
+                                        </ng-template>
+                                    </kendo-grid-column>
+
+                                    <kendo-grid-column field="serverName" title="Server Name">
+                                        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                                            <kendo-grid-string-filter-cell [column]="column" [filter]="filter">
+                                            </kendo-grid-string-filter-cell>
+                                        </ng-template>
+                                    </kendo-grid-column>
+
+                                    <kendo-grid-column field="databaseName" title="Database Name">
+                                        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                                            <kendo-grid-string-filter-cell [column]="column" [filter]="filter">
+                                            </kendo-grid-string-filter-cell>
+                                        </ng-template>
+                                    </kendo-grid-column>
+
+                                    <kendo-grid-column field="schemaName" title="Schema Name">
+                                        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                                            <kendo-grid-string-filter-cell [column]="column" [filter]="filter">
+                                            </kendo-grid-string-filter-cell>
+                                        </ng-template>
+                                    </kendo-grid-column>
+
+                                </kendo-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

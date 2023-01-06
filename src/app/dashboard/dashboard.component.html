@@ -1,0 +1,152 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="box-area">
+      <h2>Home</h2>
+      <nav>
+        <ul>
+          <li><a routerLink="/dashboard">Dashboard</a></li>
+          <li><a routerLink="/employeedtls">Employee</a></li>
+          <li><a routerLink="/dbconnections">DBConnections</a></li>
+          <li><a routerLink="/courselist">CourseList</a></li>
+          <li><a routerLink="/login" routerLinkActive="active">LogOut</a></li>
+        </ul>
+      </nav>
+      <!--<nav>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+      </nav>--> 
+      <div>
+        <p>Access TOken Value == </p>
+        <p>{{accessToken}}</p>
+      </div>
+      <div>
+        <p>
+          {{viewLocalStorageValue}}
+        </p>
+      </div>
+      <div>
+        <strong>{{firstName}}</strong>
+        <strong>{{lastName}}</strong>
+       <br>
+        Enter the value  : <input [(ngModel)] ='val'> 
+               <br> 
+                Entered value is:  {{val}} 
+      </div>
+      <div *ngIf="isVisible">
+        <table>
+          <tr *ngFor="let property of propertyTypes">
+            <td>{{property.id}}  {{property.name}}</td>
+          </tr>
+        </table>
+        <table *ngIf="isDropDownVisible">
+          <tr>
+            <td>
+              <kendo-dropdownlist [data]="listItems"></kendo-dropdownlist>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <button (click)="hideDropDownList()">HIDE DROPDOWN</button>
+        <button (click)="showDropDownList()">SHOW DROPDOWN</button>
+      </div>
+      <div>
+        <button (click)="hideList()">
+          Click to Hide List
+        </button>
+        <button (click)="showList()">
+          Show List
+        </button>
+        <button >
+          Check the vaue
+        </button>
+      </div>
+      <div>
+        <button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+    <kendo-dialog
+      title="Please confirm"
+      *ngIf="opened"
+      (close)="close('cancel')"
+      [minWidth]="250"
+      [width]="450"
+    >
+      <p style="margin: 30px; text-align: center;">
+        Are you sure you want to continue?
+      </p>
+      <kendo-dialog-actions>
+        <button kendoButton (click)="close('no')">No</button>
+        <button kendoButton (click)="close('yes')" themeColor="primary">
+          Yes
+        </button>
+      </kendo-dialog-actions>
+    </kendo-dialog>
+      </div>
+        <button (click)="onclickButton()">CLICK ME</button>
+      </div>
+      <div>
+        {{birthday | date}}
+        {{checkUppercasePipe | uppercase}}
+        {{checklowercasePipe | lowercase}}
+        {{checkcurrency | currency}}
+        {{titleCasePipe | titlecase}}
+      </div>
+     <div>
+       <button (click)="onSubmitValues()">Check Value</button>
+     </div>
+    <div>
+      <h1>SUBJECT LEARNING</h1>
+      <button (click)="subjectafunction()">Click SUbject</button>
+      <button (click)="onajaxCall()">CLICK AJAX</button>
+      <button (click)="onAjaxCallSubject()">CLICK Subject AJAX of Data</button>
+    </div>
+    <div>
+      <h1>Behaviour Subject</h1>
+      <button (click)="onBehaviorSubject()">CLICK Behaviour</button>
+    </div>
+    <div>
+      <h1>Reply Subject</h1>
+      <button (click)="onReplaySubject()">Reply Subject</button>
+    </div>
+    <div>
+      <h1>Async Subject</h1>
+      <button (click)="onAsyncSubject()">Async Subject</button>
+    </div>
+    <div>
+      <h3>{{title}}</h3>
+      <ul *ngFor="let i of data">
+         <li>{{i.id}}: {{i.name}}</li>
+      </ul>
+   </div>
+   <div>
+    <table>  
+      <tr>  
+          <td>  
+              Size is :  
+          </td>  
+          <td>  
+              {{this.sizeone}}
+          </td>  
+      </tr>  
+      <tr>  
+          <td>  
+              Square is:  
+          </td>  
+          <td>  
+            {{this.square}}
+            <ul *ngFor="let course of courses">
+              <li>{{course.id}}: {{course.name}}</li>
+           </ul>
+          </td>  
+      </tr>  
+      <tr>  
+          <td>  
+
+          </td>  
+          <td>  
+              <a routerLink="/courselist">go to second component</a>  
+          </td>  
+      </tr>  
+  </table>  
+   </div>
+  </div>
+</div>

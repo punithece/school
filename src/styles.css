@@ -1,0 +1,352 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+    border-width: 3px;
+    background-color: aquamarine !important;
+    font-family: "RobotoRegular",Helvetica,Arial,sans-serif; 
+    font-size: 14px; 
+    margin: 0;
+  }
+
+  firstDivRow {
+    flex-direction: row;
+
+    /*below, center vertically*/
+    align-items: center;
+    justify-content: center;
+
+     height: 100%;
+/*   border: 12px solid red;*/
+    padding: 10px;
+    max-width: 800px;
+    background-color: coral;
+  }
+
+  app-employeedetails {
+    display: block;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+  
+  app-employeedetails > .k-icon.k-i-loading {
+    font-size: 64px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  
+.example-wrapper {
+  min-height: 280px;
+  align-content: flex-start;
+}
+
+.example-wrapper p,
+.example-col p {
+  margin: 0 0 10px;
+}
+
+.example-wrapper p:first-child,
+.example-col p:first-child {
+  margin-top: 0;
+}
+
+.example-col {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.example-config {
+  margin: 0 0 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-log {
+  margin: 0;
+  padding: 0;
+  max-height: 100px;
+  overflow-y: auto;
+  list-style-type: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.event-log li {
+  margin: 0;
+  padding: 0.3em;
+  line-height: 1.2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-log li:last-child {
+  margin-bottom: -1px;
+}
+/*CSS MENU START */
+body{
+  margin:0;
+  padding:0;
+  font-family:'montserrat';
+  background:#e3e9f7;
+}
+
+.logo{
+  padding:20px;
+}
+
+nav ul{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:260px;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:#2b2626;
+}
+
+nav ul li{
+  list-style:none;
+}
+
+
+nav ul li a{
+  display:block;
+  font-family:'montserrat';
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:17px;
+  color:#fff;
+  position:relative;
+  padding:15px 0px 15px 25px;
+  transition:all 0.5s;
+}
+
+nav ul li a:before{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:100%;
+  background:#e3e9f7;
+  border-radius:40px 0 0 40px;
+  z-index:-1;
+  transition:all 1s;
+}
+
+nav ul li a:hover{
+  color:#2b2626;
+}
+
+nav ul li a:hover:before{
+  width:95%;
+}
+
+
+.wrapper{
+  margin-left:260px;
+  width: 900px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+}
+
+.section{
+  display:grid;
+  /*place-items:center;*/
+  min-height:100vh;
+  text-align:center;
+}
+
+.box-area h2{
+  text-transform:uppercase;
+  font-size:30px;
+}
+/*CSS MENU END */
+
+/* CSS FOR HEADER AND FOOTER  START  */
+
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #039be5;
+  padding: 3px 5px;
+}
+.content{
+  flex-shrink: 1;
+  flex-grow: 1;
+  padding: 3px 5px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.footer{
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #eee;
+  padding: 3px 15px;
+}
+p {
+  font-family: Lato;
+}
+
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+
+
+/* CSS FOR HEADER AND FOOTER END */
+
+/* Kendo popup start */
+
+.content {
+  padding: 30px;
+  color: #787878;
+  background-color: #fcf7f8;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 500px;
+  height:400px;  /* allows both columns to span the full height of the browser window */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* kendo popu end */
+
+/*Validation css Start*/
+
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid green;
+} 
+
+
+.ng-invalid[required], .ng-invalid.required {
+  border-left: 5px solid red;
+} 
+
+.error {
+  /* padding: 12px; */
+  /* border-left: 5px solid red !important; */
+  color: red;
+  margin-top: -8px;
+  margin-bottom: 4px;
+}
+
+/*Validation Css end*/
+
+kendo-dropdownlist {
+  width: 170px;
+}
+
+/* CSS TOP HEADER *START */
+
+.column {
+  height: 100%;  /* allows both columns to span the full height of the browser window */
+  display: flex;
+  flex-direction: column;  /* stacks the left and right headers above the bottom content */
+}
+
+.top-right {
+  flex-shrink: 0;
+  display: flex;
+}
+
+
+/* CSS TOP HEADER END */
+
+/** CSS Column div Start*/
+
+.col-md-55,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px
+}
+
+/** CSS Column div Ends */
+
+/** Modal footer start **/
+
+.modal-footer {
+  padding: 5px;
+}
+
+/** Modal footer end **/
